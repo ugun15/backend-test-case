@@ -1,0 +1,17 @@
+{
+  "name": "backend-algo-test",
+  "version": "1.0.0",
+  "description": "Implementasi algoritma untuk test case",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "tsc",
+    "dev": "ts-node src/main.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+} 

@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Member {
+  id        String   @id @default(uuid())
+  code      String   @unique
+  name      String
+  penalty   Boolean  @default(false)
+  penaltyEndDate DateTime?
+  borrowings Borrowing[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Book {
+  id        String   @id @default(uuid())
+  code      String   @unique
+  title     String
+  author    String
+  stock     Int
+  borrowings Borrowing[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Borrowing {
+  id        String   @id @default(uuid())
+  memberId  String
+  bookId    String
+  borrowDate DateTime @default(now())
+  returnDate DateTime?
+  member    Member   @relation(fields: [memberId], references: [id])
+  book      Book     @relation(fields: [bookId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+} 
