@@ -80,3 +80,7 @@ npm run dev
    ```bash
    npm start
    ```
+   
+4. Akses Swagger UI:
+   - Buka browser dan kunjungi: http://localhost:3000/api-docs
+   - Dokumentasi API lengkap tersedia di sini
