@@ -80,11 +80,3 @@ npm run dev
    ```bash
    npm start
    ```
-
-## Kontribusi
-
-Silakan berkontribusi dengan membuat pull request atau melaporkan issues.
-
-## Lisensi
-
-MIT
